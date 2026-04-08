@@ -1,12 +1,18 @@
 # 🛡 Missile Defense Simulation
 
-A physics-based missile interception simulation using Python and Matplotlib.
+A physics-based missile interception simulation using Python.
 
-## Features
+## 🎥 Demo
+
+![Simulation Demo](assets/demo.gif)
+
+## 🚀 Features
 - Ballistic missile trajectories
-- Proportional Navigation interceptor guidance
-- Multi-missile defense system
+- Proportional Navigation guidance
+- Multi-missile interception
 - Animated visualization
 
-## Run
+## ▶️ Run
+
+```bash
 python main.py

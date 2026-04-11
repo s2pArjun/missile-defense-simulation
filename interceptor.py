@@ -105,16 +105,20 @@ class Interceptor:
         # vertical speed continuously.  The 1.4x factor pre-compensates for
         # those gravity losses over the boost phase so the rocket still reaches
         # the predicted intercept point despite being pulled downward.
-        direction     = normalize(self.intercept_point - self.position)
-        launch_speed  = self.speed * 1.4          # compensate for gravity losses
+        direction        = normalize(self.intercept_point - self.position)
+        direction[1]    += 2.0          # push y component upward strongly
+        direction        = normalize(direction)   # renormalize to unit vector
+
+        launch_speed  = self.speed * 2.2          # compensate for gravity losses
+
         self.velocity = direction * launch_speed
 
         # WHY 60% cap: 75% was too long for fast early intercepts — the motor
         # was still firing after the rocket had already passed the intercept
         # window, wasting thrust and extending the trajectory past the target.
         # 60% gives enough boost to reach altitude, then coasts ballistically.
-        self._burnout_time = (min(self.intercept_time * 0.6, 5.0)
-                              if self.intercept_time else 4.0)
+        self._burnout_time = (min(self.intercept_time * 0.7, 6.0)
+                              if self.intercept_time else 5.0)
 
     # ── Geometry Solver ───────────────────────────────────────────────────────
 

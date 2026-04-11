@@ -356,7 +356,7 @@ if __name__ == "__main__":
 
     # 3. Produce static summary PNG
     save_static_summary(sim,
-                        output_path="/mnt/user-data/outputs/missile_defense_summary.png")
+                        output_path="missile_defense_summary.png")
 
     # 4. Print final event log
     print("\n── Event Log ──────────────────────────────────────────────")

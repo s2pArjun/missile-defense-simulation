@@ -121,7 +121,7 @@ class Simulation:
         # short trajectory.  At 2.5 s the missiles are mid-arc (~200-350 m
         # altitude) making the intercept geometry far more realistic and the
         # visible animation much more meaningful.
-        if self.step_count == int(2.5 / dt):
+        if self.step_count == int(3.5 / dt):
             for m in self.missiles:
                 # Only spawn if not already tracking this missile
                 tracked_ids = {intr.target_missile.id

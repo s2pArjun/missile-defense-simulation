@@ -45,8 +45,8 @@ class Config:
     ]
 
     # ── Interceptors ─────────────────────────────────────────────────────────
-    INTERCEPTOR_SPEED        = 250.0  # Fixed interceptor speed (m/s)
-    INTERCEPTOR_LAUNCH_X     = 400.0  # x-position of the launcher battery
+    INTERCEPTOR_SPEED        = 120.0  # Fixed interceptor speed (m/s)
+    INTERCEPTOR_LAUNCH_X     = 600.0  # x-position of the launcher battery
     INTERCEPTOR_LAUNCH_Y     =   5.0  # y-position of the launcher battery
 
     # ── Interception Logic ───────────────────────────────────────────────────

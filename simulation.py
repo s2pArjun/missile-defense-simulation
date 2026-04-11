@@ -115,9 +115,13 @@ class Simulation:
         for m in self.missiles:
             m.update(dt)
 
-        # ── Spawn interceptors after a short radar-lock delay (~0.5 s) ───
-        # (Only once per missile, after it has been airborne long enough)
-        if self.step_count == int(0.5 / dt):
+        # ── Spawn interceptors after a radar-lock delay of ~2.5 s ────────
+        # WHY 2.5s: at 0.5 s the missiles have barely left the ground (~45 m
+        # altitude).  Intercepting that close to the launcher gives a trivially
+        # short trajectory.  At 2.5 s the missiles are mid-arc (~200-350 m
+        # altitude) making the intercept geometry far more realistic and the
+        # visible animation much more meaningful.
+        if self.step_count == int(2.5 / dt):
             for m in self.missiles:
                 # Only spawn if not already tracking this missile
                 tracked_ids = {intr.target_missile.id
